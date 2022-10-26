@@ -22,8 +22,9 @@ func (t *Tags) ReadConf() {
 			json.Unmarshal(data, &temp)
 			cfg[i] = temp
 		}
-	} else {
-		fmt.Println("已经初始化")
-	}
+	} 
+	//else {
+	//	fmt.Println("已经初始化")
+	//}
 
 }
