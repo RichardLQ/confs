@@ -44,6 +44,9 @@ func (c *Container)InitMysql() (gorm.DB,error) {
 }
 
 func (c *Container)InitRedis() (redis.Conn,error) {
-	r, err := redis.Dial("tcp", ":6379")
+	instanceCfg := c.Datas
+	host := instanceCfg["host"].(string)
+	port := instanceCfg["port"].(string)
+	r, err := redis.Dial("tcp", host+":"+port)
 	return r,err
 }
